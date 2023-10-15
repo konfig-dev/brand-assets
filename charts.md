@@ -49,7 +49,8 @@ flowchart TD
       Generate -->|Language n| TestN
       Test1 --> Version1
       Test --> Version
-      TestN --> VersionN
+      TestN --> VersionN:w
+
       Version1 --> Publish1
       Version --> Publish
       VersionN --> PublishN
@@ -57,4 +58,87 @@ flowchart TD
       Check -->|Repeat| Lint
     end
     You -->|Provide OpenAPI Spec & Test Cases| Lint
+```
+
+# Mindmap of SDK Generation
+
+```mermaid
+mindmap
+  root((Generating SDKs))
+    Automation
+      OAS Changes
+        Push
+          GitHub Action
+        Pull
+          Polling
+      Versioning
+        Intelligent Version Bumps
+      Linting
+      Testing
+      Publishing
+    Ensuring High Quality SDKs
+      Linting
+        Spectral
+        Rulesets
+          Custom Ruleset for high quality SDKs
+        GitHub Action
+        VSCode Extension
+      Security
+        Request Signing
+        OAuth
+        API Key
+      Customizations
+        Common Flows
+        Pagination
+        Parameter State Tracking
+      Serialization / Deserialization
+      File Structure
+      Namespacing
+      HTTP Libraries
+      Caching
+      Concurrency
+      3.1 Support
+        Nullable
+    Open Source Generators
+      Java Based
+        Swagger
+        OpenAPI Generator
+      C# Based
+        NSwag
+      TypeScript Based
+        AutoRest
+        openapi typescript codegen
+    Versioning
+      Date Based Versioning
+      Semantic Versioning
+        Diff Tooling
+            Optic
+    Testing
+      C#
+        nunit
+      Java
+        Maven
+      Python
+        tox
+        pyunit
+      Node
+        jasmine
+    Publishing
+      Automating Releases
+      Credential Management
+      Package Managers
+        C#
+          Nuget
+        Java / Kotlin
+          Maven
+        Node
+          npm
+        Python
+          pypi
+        PHP
+          Packagist
+        Swift
+          Swift Package Index / GitHub
+        Go
+          Go Packages / GitHub
 ```
